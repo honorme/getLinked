@@ -97,6 +97,9 @@ export const Landing = () => {
           </div> */}
         </div>
 
+        <div className="flex w-full relative max-[1100px]:justify-center ">
+          <SubTitleSvg className="w-[723px] max-[1100px]:w-[500px] max-[1100px]:right-[20%] absolute right-20 top-10 " />
+        </div>
         <div className="w-full flex max-[1100px]:flex-col justify-between items-center mt-10 relative ">
           <div className="z-10 ml-24 mt-20 ">
             <TitleSvg className="w-[600px] max-[1100px]:w-[400px] " />
@@ -107,7 +110,6 @@ export const Landing = () => {
             <Button style={{ height: 53, marginTop: 40 }}>Register</Button>
             <CountdownSvg className="mt-8 " />
           </div>
-          <SubTitleSvg className="absolute right-20 top-0 " />
           <div className="w-full flex min-[1100px]:justify-end max-[1100px]:justify-center h-[600px] overflow-hidden relative max-[1100px]:self-end ">
             <Image
               draggable={false}
@@ -407,45 +409,46 @@ export const Landing = () => {
             </p>
           </div>
           <div className="px-10 flex justify-center">
-            <div className="grid min-[1100px]:grid-cols-3 max-[1100px]:grid-cols-2 border-[1px] border-[#D434FE] rounded-[5px] px-14 max-[700px]:px-0 py-20 mt-10 relative ">
+            <div className="grid min-[1100px]:grid-cols-3 max-[1100px]:grid-cols-3 border-[1px] border-[#D434FE] rounded-[5px] px-14 max-[700px]:px-0 py-20 mt-10 relative ">
               <StarOneScreenOne className="absolute left-10 -top-10 " />
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <LibertyAssured />
+                <LibertyAssured className="w-[110px] " />
                 <HorizLine className="-bottom-[2px] " />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <LibertyPay />
+                <LibertyPay className="px-2 w-[190px] " />
                 <StarTwoScreenOne className="absolute right-10 -top-4 " />
                 <HorizLine className="-bottom-[2px] " />
-                <VertLine className="max-[700px]:hidden max-[1100px]:hidden right-0" />
-                <VertLine className="max-[700px]:hidden left-0" />
+                <VertLine className=" right-0" />
+                <VertLine className="left-0" />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <Winwise />
+                <Winwise className="w-[120px] " />
                 <HorizLine className="-bottom-[2px] " />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <Whispersms />
-                <VertLine className="max-[700px]:hidden min-[1100px]:hidden max-[1100px]:left-0" />
-                <HorizLine className="min-[1100px]:hidden max-[1100px]:-bottom-[2px] " />
+                <Whispersms className="w-[120px] " />
+                {/* <VertLine className="" /> */}
+                {/* <HorizLine className="min-[1100px]:hidden max-[1100px]:-bottom-[2px] " /> */}
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <div className={`${typohoop.className} text-[50px] flex `}>
+                <div className={`${typohoop.className} text-[35px] flex `}>
                   <p>Pay</p>
                   <p className="text-[#00A3FF] ">box</p>
                 </div>
                 <StarOneScreenOne className="absolute right-10 -bottom-10 " />
-                <VertLine className="max-[700px]:hidden max-[1100px]:hidden left-0" />
+                <VertLine className=" left-0" />
+                <VertLine className=" right-0" />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <div className={`${voces.className} text-[40px] flex gap-1 `}>
+                <div className={`${voces.className} text-[35px] flex gap-1 `}>
                   <p>Vuzual</p>
                   <div>
                     <p className={`text-[#F00] ${volkhov.className} `}>Plus</p>
                     <p className="text-[11px] leading-[1px] ">Design Studios</p>
                   </div>
                 </div>
-                <VertLine className="max-[700px]:hidden left-0" />
+                {/* <VertLine className="max-[700px]:hidden left-0" /> */}
               </div>
             </div>
           </div>
@@ -518,10 +521,10 @@ export const Landing = () => {
         </div>
       </div>
       {/* screen eight- footer  */}
-      <div className="w-full pt-20 pb-5 px-24 flex flex-col justify-between relative">
+      <div className="w-full pt-20 pb-5 px-24 flex flex-col justify-between max-[800px]:items-center relative">
         <StarOneScreenOne className="absolute top-10 left-28 " />
         <StarTwoScreenOne className="absolute bottom-10 right-20 " />
-        <div className="w-full flex max-[1100px]:flex-wrap max-[800px]:flex-col max-[1100px]: justify-between text-[13px]">
+        <div className="w-full flex max-[1100px]:flex-wrap max-[800px]:flex-col max-[800px]:w-1/2 justify-between text-[13px]">
           <div className="flex flex-col ">
             <span className={`flex font-bold text-[22px] ${clash.className}`}>
               <p>get</p>
