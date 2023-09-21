@@ -56,7 +56,7 @@ export const volkhov = localFont({
 export const clash = localFont({
   src: [
     {
-      path: '../assets/fonts/clash_display/ClashDisplay-ExtraLight.otf',
+      path: '../assets/fonts/clash_display/ClashDisplay-Extralight.otf',
       weight: '100',
       style: 'normal',
     },
