@@ -1,11 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden;   */
   padding: 0;
   margin: 0;
+  display: block;
+  background-color: #140D27;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -25,12 +29,12 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #cfc5eb;
+  background: #ababab;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #5d42a7;
+  background: #000000c8;
 }
 
 /* Handle on hover */
@@ -47,7 +51,11 @@ a {
   animation-duration: 80000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  transition: transform 0.2s ease;
 }
+/* .globe:hover {
+  animation-duration: 20000ms;
+} */
 
 @keyframes spin {
     from {
@@ -57,3 +65,38 @@ a {
         transform:rotate(360deg);
     }
 }
+
+.circle {
+  border-radius: 100%;
+  background: linear-gradient(270deg, #903AFF 0%, #D434FE 100%);
+  transition:  ease-in all 2000ms
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 5fr .5fr 3fr;
+}
+
+.cloud-motion {
+  animation: cloudMotion 5s infinite linear;
+}
+
+@keyframes cloudMotion {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+    transform: translatey(0px);
+	}
+}
+
+
+/* for future use  */
+.sponsor:hover{
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); 
+  transition: all ease-in-out 0.2s
+}
+/* for future use  */

@@ -2,7 +2,58 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import localFont from 'next/font/local'
 
-const clash = localFont({
+export const typohoop = localFont({
+  src: [
+    {
+      path: '../assets/fonts/typo_hoop/Typo_Hoop_Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+})
+export const voces = localFont({
+  src: [
+    {
+      path: '../assets/fonts/voces/Voces-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+})
+export const montserrat = localFont({
+  src: [
+    {
+      path: '../assets/fonts/montserrat/Montserrat-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/montserrat/Montserrat-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/montserrat/Montserrat-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/montserrat/Montserrat-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+})
+export const volkhov = localFont({
+  src: [
+    {
+      path: '../assets/fonts/volkhov/Volkhov-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+})
+export const clash = localFont({
   src: [
     {
       path: '../assets/fonts/clash_display/ClashDisplay-ExtraLight.otf',
