@@ -103,13 +103,15 @@ export const Landing = () => {
           <SubTitleSvg className="w-[723px] max-[1100px]:w-[500px] max-[1100px]:right-[20%] absolute right-20 top-10 " />
         </div>
         <div className="w-full flex max-[1100px]:flex-col justify-between items-center mt-10 relative ">
-          <div className="z-10 ml-24 mt-20 ">
-            <TitleSvg className="w-[600px] max-[1100px]:w-[400px] " />
-            <p className="w-96 ">
+          <div className="z-10 min-[800px]:ml-24 mt-20 flex flex-col max-[800px]:items-center ">
+            <TitleSvg className="w-[600px] max-[1100px]:w-[800px] " />
+            <p className="w-96 max-[800px]:text-[24px] max-[800px]:w-auto max-[800px]:px-32 max-[800px]:text-center ">
               Participate in getlinked tech Hackathon 2023 stand a chance to win
               a Big prize
             </p>
-            <Button style={{ height: 53, marginTop: 40 }}>Register</Button>
+            <div className="w-full flex max-[800px]:justify-center ">
+              <Button style={{ height: 53, marginTop: 40 }}>Register</Button>
+            </div>
             <CountdownSvg className="mt-8 " />
           </div>
           <div className="w-full flex min-[1100px]:justify-end max-[1100px]:justify-center h-[600px] overflow-hidden relative max-[1100px]:self-end ">
@@ -161,7 +163,7 @@ export const Landing = () => {
               purple="tech Hackathon 1.0"
               star={<StarOneScreenTwo className="relative left-20 top-10 " />}
             />
-            <p className="w-[525px] max-[1100px]:w-[400px] max-[1100px]:text-center mt-5 ">
+            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[24px] mt-5 ">
               Our tech hackathon is a melting pot of visionaries, and its
               purpose is as clear as day: to shape the future. Whether
               you&#39;re a coding genius, a design maverick, or a concept
@@ -184,7 +186,7 @@ export const Landing = () => {
               purple="Guidelines"
               star={<StarTwoScreenOne className="relative left-20 top-10 " />}
             />
-            <p className="w-[525px] max-[1100px]:w-[400px] max-[1100px]:text-center mt-5 ">
+            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[24px] mt-5 ">
               Our tech hackathon is a melting pot of visionaries, and its
               purpose is as clear as day: to shape the future. Whether
               you&#39;re a coding genius, a design maverick, or a concept
@@ -232,7 +234,7 @@ export const Landing = () => {
             <SubTitle white="Judging Criteria" purple="Key attributes" />
             {judgingCriteria?.map(({ label, text }, index) => (
               <span key={index} className="flex flex-col py-2 ">
-                <p className="w-[600px] max-[1100px]:w-[400px] font-thin text-[14px] max-[1100px]:text-center ">
+                <p className="w-[600px] max-[1100px]:w-[400px] max-[800px]:w-[530px] font-thin text-[14px] max-[800px]:text-[22px] max-[1100px]:text-center ">
                   <b className="text-[#FF26B9] font-semibold pr-2 ">{label}</b>
                   {text}
                 </p>
@@ -247,12 +249,12 @@ export const Landing = () => {
       {/* screen five - faqs  */}
       <div className="w-full py-20 flex relative border-b-[1px] border-[#ffffff20]">
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-10 ">
-          <div className="z-10 ">
+          <div className="z-10 max-[800px]:flex flex-col items-center ">
             <div className="relative">
               <SubTitle white="Frequently Ask" purple="Question" />
               <StarOneScreenTwo className="absolute -top-10 -left-10 " />
             </div>
-            <p className="w-[400px] font-extralight text-[14px] ">
+            <p className="w-[400px] max-[800px]:w-[570px] max-[800px]:mt-4 font-extralight text-[14px] max-[800px]:text-[22px] max-[800px]:text-center ">
               We got answers to the questions that you might want to ask about{' '}
               <b className="font-medium">getlinked Hackathon 1.0</b>
             </p>
@@ -263,9 +265,9 @@ export const Landing = () => {
                     onMouseOver={() => setIdx(index)}
                     onMouseOut={() => setIdx(undefined)}
                     key={index}
-                    className="flex border-b-[1px] border-[#D434FE] h-[40px] hover:pb-2 transition-all duration-200 font-extralight text-[13px] "
+                    className="flex border-b-[1px] border-[#D434FE] h-[40px] max-[800px]:h-[80px] hover:pb-2 transition-all duration-200 font-extralight text-[13px] max-[800px]:text-[24px] "
                   >
-                    <div className="flex w-full gap-2 items-center justify-between">
+                    <div className="flex w-full gap-2 items-center justify-between max-[800px]:py-4 ">
                       <p>{text}</p>
                       <p className="text-[#D434FE] text-[18px] cursor-pointer ">
                         {idx === index ? '-' : '+'}
@@ -276,7 +278,7 @@ export const Landing = () => {
               </div>
             </div>
           </div>
-          <div className="relative max-[1100px]:mt-20">
+          <div className="relative max-[1100px]:mt-20 max-[800px]:mt-40">
             {/* <CloudMan className="relative z-10 w-[700px] cloud-motion " /> */}
             <Image
               draggable={false}
@@ -303,54 +305,56 @@ export const Landing = () => {
         <StarTwoScreenOne className="absolute bottom-20 left-52 " />
         <div className="w-full flex flex-col justify-center">
           <div className="flex flex-col justify-center items-center ">
-            <p className={`text-[32px] font-semibold ${clash.className} `}>
+            <p
+              className={`text-[32px] max-[800px]:text-[50px] font-semibold ${clash.className} `}
+            >
               Timeline
             </p>
-            <p className="w-[380px] text-center ">
+            <p className="w-[380px] max-[800px]:w-[525px] text-center max-[800px]:text-[22px] ">
               Here is the breakdown of the time we anticipate using for the
               upcoming event.
             </p>
           </div>
-          <div className="mt-10 px-24 flex justify-center max-[1100px]:justify-start w-full ">
-            <div className="relative flex flex-col gap-y-24 max-[1100px]:gap-y-32 mt-20 ">
+          <div className="mt-10 max-[800px]:mt-32 px-24 flex justify-center max-[1100px]:justify-start w-full ">
+            <div className="relative flex flex-col gap-y-24 max-[800px]:gap-y-60 max-[1100px]:gap-y-32 mt-20 max-[800px]:mt-40 ">
               {timeline?.map(({ eventTitle, subtitle, date }, index) => (
                 <div key={index} className="w-full flex ">
                   {index % 2 === 0 && (
-                    <div className="absolute  min-[1100px]:right-20 max-[1100px]:left-20 -mt-6 max-[1100px]:-mt-24 flex flex-col text-end max-[1100px]:text-start">
-                      <p className="text-[18px] text-[#D434FE] font-bold ">
+                    <div className="absolute min-[1100px]:right-20 max-[1100px]:left-20 -mt-6 max-[1100px]:-mt-24 max-[800px]:-mt-48 flex flex-col text-end max-[1100px]:text-start">
+                      <p className="text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                         {eventTitle}
                       </p>
-                      <p className="text-[12px] font-thin text-end max-[1100px]:text-start w-[400px] ">
+                      <p className="text-[12px] max-[800px]:text-[24px] font-thin text-end max-[1100px]:text-start w-[400px] max-[800px]:w-[590px] ">
                         {subtitle}
                       </p>
                     </div>
                   )}
-                  <p className="absolute min-[1100px]:right-20 max-[1100px]:left-20 truncate text-[18px] text-[#D434FE] font-bold ">
+                  <p className="absolute min-[1100px]:right-20 max-[1100px]:left-20 truncate text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                     {index % 2 !== 0 && date}
                   </p>
                   <div className="flex flex-col justify-center items-center relative ">
                     <div
                       className={
                         index !== 0
-                          ? `absolute bottom-10 bg-[#D434FE] w-[2px] h-20 max-[1100px]:h-28 z-0 `
-                          : `absolute bottom-10 bg-[#D434FE] w-[2px] h-20 max-[1100px]:h-20 z-0`
+                          ? `absolute bottom-10 max-[800px]:bottom-14 bg-[#D434FE] w-[2px] h-20 max-[1100px]:h-28 max-[800px]:h-56 z-0 `
+                          : `absolute bottom-10 max-[800px]:bottom-14 bg-[#D434FE] w-[2px] h-20 max-[1100px]:h-20 max-[800px]:h-40 z-0`
                       }
                     ></div>
-                    <div className="circle w-8 h-8 flex items-center justify-center z-10 ">
+                    <div className="circle w-8 h-8 max-[800px]:w-12 max-[800px]:h-12 flex items-center justify-center z-10 ">
                       {index + 1}
                     </div>
                   </div>
                   {index % 2 !== 0 && (
-                    <div className="absolute left-20 -mt-6 max-[1100px]:-mt-24 flex flex-col text-start">
-                      <p className="text-[18px] text-[#D434FE] font-bold ">
+                    <div className="absolute left-20 -mt-6 max-[1100px]:-mt-24 max-[800px]:-mt-48 flex flex-col text-start">
+                      <p className="text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                         {eventTitle}
                       </p>
-                      <p className="text-[12px] font-thin text-start w-[400px] ">
+                      <p className="text-[12px] max-[800px]:text-[24px] font-thin text-start w-[400px] max-[800px]:w-[590px] ">
                         {subtitle}
                       </p>
                     </div>
                   )}
-                  <p className="absolute left-20 truncate text-[18px] text-[#D434FE] font-bold ">
+                  <p className="absolute left-20 truncate text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                     {index % 2 === 0 && date}
                   </p>
                 </div>
@@ -367,7 +371,7 @@ export const Landing = () => {
           <div className="relative mt-32 ">
             <div className="min-[1100px]:pl-36 min-[1100px]:hidden py-2 max-[1100px]:flex max-[1100px]:flex-col max-[1100px]:items-center ">
               <SubTitle white="Prizes and" purple="Rewards" />
-              <p className="w-[330px] text-[13px] max-[1100px]:text-center max-[1100px]:mt-3 ">
+              <p className="w-[330px] max-[800px]:w-[580px] text-[13px] max-[800px]:text-[24px] max-[1100px]:text-center max-[1100px]:mt-3 ">
                 Highlight of the prizes or rewards for winners and for
                 participants.
               </p>
@@ -380,7 +384,7 @@ export const Landing = () => {
                 alt="logo"
                 width={584}
                 height={482}
-                className="relative z-10 cloud-motion"
+                className="relative z-10 max-[800px]:py-20 cloud-motion"
               />
             </div>
             <StarOneScreenOne className="absolute -top-32 left-32 " />
@@ -406,12 +410,12 @@ export const Landing = () => {
                   className="absolute -top-20 left-[17px] cloud-motion"
                 />
                 <StarOneScreenOne className="absolute -top-40 " />
-                <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[4px] flex flex-col items-center justify-end p-8 ">
-                  <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
+                <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[12px] max-[800px]:rounded-[25px] flex flex-col items-center justify-end p-8 ">
+                  <p className="text-center first-line:text-[20px] max-[800px]:first-line:text-[32px] max-[800px]:text-[28px] first-line:leading-[8px] first-line:font-medium ">
                     2nd
                     <br /> Runner
                   </p>
-                  <p className="text-[#D434FE] font-bold text-[22px] ">
+                  <p className="text-[#D434FE] font-bold text-[22px] max-[800px]:text-[32px] ">
                     N300,000
                   </p>
                 </div>
@@ -427,12 +431,12 @@ export const Landing = () => {
                   className="absolute -top-40 cloud-motion"
                 />
                 <StarTwoScreenOne className="absolute -bottom-10 -right-10 " />
-                <div className="w-[212px] h-[296px] bg-[#903AFF20] border-[1px] border-[#903AFF] rounded-[4px] flex flex-col items-center justify-end p-8 ">
-                  <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
+                <div className="w-[212px] h-[296px] bg-[#903AFF20] border-[1px] border-[#903AFF] rounded-[12px] max-[800px]:rounded-[25px] flex flex-col items-center justify-end p-8 ">
+                  <p className="text-center first-line:text-[20px] max-[800px]:first-line:text-[32px] max-[800px]:text-[28px] first-line:leading-[8px] first-line:font-medium ">
                     1st
                     <br /> Runner
                   </p>
-                  <p className="text-[#903AFF] font-bold text-[22px] ">
+                  <p className="text-[#903AFF] font-bold text-[22px] max-[800px]:text-[32px] ">
                     N400,000
                   </p>
                 </div>
@@ -448,12 +452,12 @@ export const Landing = () => {
                   className="absolute -top-20 left-[17px] cloud-motion"
                 />
                 <StarOneScreenOne className="absolute -top-20 right-0 " />
-                <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[4px] flex flex-col items-center justify-end p-8 ">
-                  <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
+                <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[12px] max-[800px]:rounded-[25px] flex flex-col items-center justify-end p-8 ">
+                  <p className="text-center first-line:text-[20px] max-[800px]:first-line:text-[32px] max-[800px]:text-[28px] first-line:leading-[8px] first-line:font-medium ">
                     3rd
                     <br /> Runner
                   </p>
-                  <p className="text-[#D434FE] font-bold text-[22px] ">
+                  <p className="text-[#D434FE] font-bold text-[22px] max-[800px]:text-[32px] ">
                     N150,000
                   </p>
                 </div>
@@ -467,13 +471,13 @@ export const Landing = () => {
         {/* <FlareFive className="absolute -top-40 left-0 " /> */}
         {/* <FlareSix className="absolute right-0 -bottom-40 " /> */}
         <div className="w-full flex flex-col justify-center ">
-          <div className="w-full h-[100px] flex flex-col items-center justify-center z-10 ">
+          <div className="w-full h-[100px] flex flex-col items-center justify-center z-10 max-[800px]:mb-20 ">
             <p
-              className={`text-center text-[22px] font-semibold py-2 ${clash.className} `}
+              className={`text-center text-[22px] max-[800px]:text-[40px] font-semibold py-2 ${clash.className} `}
             >
               Partners and Sponsors
             </p>
-            <p className="text-center text-[12px] w-[420px] font-thin ">
+            <p className="text-center text-[12px] max-[800px]:text-[24px] w-[420px] max-[800px]:w-[590px] font-thin ">
               Getlinked Hackathon 1.0 is honored to have the following major
               companies as its partners and sponsors
             </p>
@@ -562,13 +566,13 @@ export const Landing = () => {
               alt="logo"
               width={559}
               height={749}
-              className="z-10 relative"
+              className="z-10 relative mt-52"
             />
             <Security className="absolute right-32 top-12 z-0 " />
           </div>
           <div className="flex text-[13px]">
             <div className="w-full flex flex-col relative ">
-              <div className="flex flex-col gap-y-8">
+              <div className="flex flex-col gap-y-8 max-[800px]:text-[21px]  max-[800px]:items-center ">
                 <SubTitle
                   white="Privacy Policy and"
                   purple="Terms"
@@ -577,14 +581,14 @@ export const Landing = () => {
                 <p className="text-[#ffffff9f] max-[1100px]:text-center ">
                   Last updated on September 12, 2023
                 </p>
-                <p className=" max-[1100px]:text-center ">
+                <p className=" max-[1100px]:text-center max-[800px]:w-full ">
                   Below are our privacy & policy, which outline a lot of
                   goodies.
                   <br />
                   it’s our aim to always take of our participant
                 </p>
               </div>
-              <div className="flex flex-col items-center justify-center border-[1px] border-[#D434FE] rounded-[5px] p-14 mt-10 relative ">
+              <div className="flex flex-col items-center justify-center border-[1px] border-[#D434FE] rounded-[5px] p-14 mt-10 relative max-[800px]:text-[24px] ">
                 <p className=" min-[1100px]:w-[400px] self-start max-[1100px]:text-center ">
                   At getlinked tech Hackathon 1.0, we value your privacy and are
                   committed to protecting your personal information. This
@@ -594,8 +598,12 @@ export const Landing = () => {
                   practices described in this policy.
                 </p>
                 <div className="flex flex-col self-start gap-y-2 mt-8 font-semibold">
-                  <p className="text-[#D434FE] ">Licensing Policy</p>
-                  <p>Here are terms of our Standard License:</p>
+                  <p className="text-[#D434FE] max-[800px]:pt-10 ">
+                    Licensing Policy
+                  </p>
+                  <p className="max-[800px]:pb-3 ">
+                    Here are terms of our Standard License:
+                  </p>
                   <div className="flex font-thin  min-[1100px]:w-[400px] ">
                     <div>
                       <GreenCheck />
@@ -615,7 +623,11 @@ export const Landing = () => {
                     </p>
                   </div>
                 </div>
-                <Button style={{ height: 53, marginTop: 20 }}>Read More</Button>
+                <div className=" max-[800px]:pb-20 max-[800px]:pt-10 ">
+                  <Button style={{ height: 53, marginTop: 20 }}>
+                    Read More
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -625,54 +637,60 @@ export const Landing = () => {
       <div className="w-full pt-20 pb-5 px-24 flex flex-col justify-between max-[800px]:items-center relative">
         <StarOneScreenOne className="absolute top-10 left-28 " />
         <StarTwoScreenOne className="absolute bottom-10 right-20 " />
-        <div className="w-full flex max-[1100px]:flex-wrap max-[800px]:flex-col max-[800px]:w-1/2 justify-between text-[13px]">
+        <div className="w-full flex max-[1100px]:flex-wrap max-[800px]:flex-col items-center justify-between text-[13px]">
           <div className="flex flex-col ">
-            <span className={`flex font-bold text-[22px] ${clash.className}`}>
+            <span
+              className={`flex font-bold text-[22px] max-[800px]:text-[40px] ${clash.className}`}
+            >
               <p>get</p>
               <p className="text-[#D434FE] ">linked</p>
             </span>
-            <p className="text-[12px] w-[400px] max-[800px]:w-[300px] ">
+            <p className="text-[12px] max-[800px]:text-[24px] w-[400px] max-[800px]:w-[580px] ">
               Getlinked Tech Hackathon is a technology innovation program
               established by a group of organizations with the aim of showcasing
               young and talented individuals in the field of technology
             </p>
-            <div className="flex items-center gap-x-2 mt-20 max-[800px]:mt-10 ">
+            <div className="flex items-center gap-x-2 mt-20 max-[800px]:mt-10 max-[800px]:text-[24px] ">
               <p>Terms of Use</p>
               <div className="w-[2px] h-5 bg-[#D434FE] "></div>
               <p>Privacy Policy</p>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 px-10 max-[800px]:px-0 max-[800px]:mt-10 ">
-            <p className="text-[#D434FE] font-semibold ">Useful Links</p>
-            <p>Overview</p>
-            <p>Timeline</p>
-            <p>FAQs</p>
-            <p>Register</p>
-            <div className="flex items-center gap-x-4">
-              <p className="text-[#D434FE] font-semibold ">Follow us</p>
-              <Instagram />
-              <Twitter />
-              <Facebook />
-              <Linkedin />
+          <div className="w-full px-12">
+            <div className="flex flex-col gap-y-3 px-10 max-[800px]:px-0 max-[800px]:mt-10 max-[800px]:text-[24px] ">
+              <p className="text-[#D434FE] font-semibold ">Useful Links</p>
+              <p>Overview</p>
+              <p>Timeline</p>
+              <p>FAQs</p>
+              <p>Register</p>
+              <div className="flex items-center gap-x-4">
+                <p className="text-[#D434FE] font-semibold ">Follow us</p>
+                <Instagram />
+                <Twitter />
+                <Facebook />
+                <Linkedin />
+              </div>
             </div>
           </div>
-          <div className="flex flex-col gap-y-3 relative max-[800px]:mt-10 ">
-            <StarTwoScreenOne className="absolute -left-20 top-2" />
-            <p className="text-[#D434FE] font-semibold ">Contact Us</p>
-            <div className="flex gap-x-3">
-              <Phone />
-              <p>+234 6707653444</p>
-            </div>
-            <div className="flex gap-x-3">
-              <Location />
-              <p>
-                27,Alara Street
-                <br /> Yaba 100012 <br /> Lagos State
-              </p>
+          <div className="w-full px-12">
+            <div className="flex flex-col gap-y-3 relative max-[800px]:mt-10 max-[800px]:text-[24px] ">
+              <StarTwoScreenOne className="absolute -left-20 top-2" />
+              <p className="text-[#D434FE] font-semibold ">Contact Us</p>
+              <div className="flex gap-x-3">
+                <Phone className=" max-[800px]:mt-2 " />
+                <p>+234 6707653444</p>
+              </div>
+              <div className="flex gap-x-3">
+                <Location className=" max-[800px]:mt-2 " />
+                <p>
+                  27,Alara Street
+                  <br /> Yaba 100012 <br /> Lagos State
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <p className="w-full text-center text-[12px] max-[800px]:py-14 ">
+        <p className="w-full text-center text-[12px] max-[800px]:text-[24px] max-[800px]:py-14 ">
           All rights reserved. © getlinked Ltd.
         </p>
       </div>
@@ -704,7 +722,7 @@ const SubTitle = ({
     <div
       className={`flex relative max-[1100px]:justify-center ${clash.className}`}
     >
-      <span className="font-semibold text-[32px] leading-[34px] ">
+      <span className="font-semibold text-[32px] max-[800px]:text-[45px] leading-[34px] max-[800px]:leading-[60px] ">
         <p>{white}</p>
         <p className="text-[#D434FE] max-[1100px]:text-center">{purple}</p>
       </span>
