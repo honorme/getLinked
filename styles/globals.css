@@ -22,6 +22,24 @@ a {
 * {
   box-sizing: border-box;
 }
+input{
+  border-radius: 4px;
+border: 1px solid #FFF;
+background: rgba(255, 255, 255, 0.03);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+input:focus{
+  outline: none;
+}
+textarea{
+  border-radius: 4px;
+border: 1px solid #FFF;
+background: rgba(255, 255, 255, 0.03);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+textarea:focus{
+  outline: none;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
@@ -78,6 +96,9 @@ a {
   100% {
     transform: rotate(-3deg);
   }
+}
+.text-gradient{
+  color:linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
 }
 
 .circle {
