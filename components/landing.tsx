@@ -21,7 +21,9 @@ import {
   Location,
   PadlockMan,
   Phone,
-  QuestionMark,
+  QuestionMark1,
+  QuestionMark2,
+  QuestionMark3,
   Security,
   Silver,
   StandingMan_Woman,
@@ -144,7 +146,15 @@ export const Landing = () => {
         <StarOneScreenTwo className="absolute top-60 left-32 " />
         <CurledArrowScreenTwo className="absolute bottom-32 right-[50%]" />
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-20 ">
-          <TheBigIdea className="cloud-motion" />
+          {/* <TheBigIdea className="cloud-motion" /> */}
+          <Image
+            draggable={false}
+            src="/images/main/the-big-idea.png"
+            alt="logo"
+            width={490}
+            height={477}
+            className="cloud-motion"
+          />
           <div className="max-[1100px]:mt-20">
             <SubTitle
               white="Introduction to getlinked"
@@ -185,7 +195,15 @@ export const Landing = () => {
             </p>
           </div>
           <div className="relative">
-            <ChairGirl className="relative z-10 cloud-motion " />
+            {/* <ChairGirl className="relative z-10 cloud-motion " /> */}
+            <Image
+              draggable={false}
+              src="/images/main/chair-girl.png"
+              alt="logo"
+              width={664}
+              height={664}
+              className="relative z-10 cloud-motion"
+            />
             <StarOneScreenTwo className="absolute bottom-44 left-0 " />
             <Ellipse className="absolute top-20 right-32 z-0 " />
           </div>
@@ -197,7 +215,15 @@ export const Landing = () => {
         <FlareSix className="absolute right-0 top-52 " />
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-10 ">
           <div className="relative">
-            <StandingMan_Woman className="relative z-10 cloud-motion " />
+            {/* <StandingMan_Woman className="relative z-10 cloud-motion " /> */}
+            <Image
+              draggable={false}
+              src="/images/main/standing-man-woman.png"
+              alt="logo"
+              width={710}
+              height={587}
+              className="relative z-10 cloud-motion"
+            />
             <Ellipse className="absolute -top-8 left-24 z-0 " />
             <StarOneScreenTwo className="absolute bottom-0 right-0 " />
             <StarOneScreenTwo className="absolute -top-20 left-40 " />
@@ -251,8 +277,20 @@ export const Landing = () => {
             </div>
           </div>
           <div className="relative max-[1100px]:mt-20">
-            <CloudMan className="relative z-10 w-[700px] cloud-motion " />
-            <QuestionMark className="absolute -top-12 left-24 z-0 " />
+            {/* <CloudMan className="relative z-10 w-[700px] cloud-motion " /> */}
+            <Image
+              draggable={false}
+              src="/images/main/cloud-man.png"
+              alt="logo"
+              width={741}
+              height={741}
+              className="relative z-10 cloud-motion"
+            />
+            <div className="flex gap-x-24 absolute -top-12 left-24">
+              <QuestionMark1 className="relative top-10 question-mark " />
+              <QuestionMark2 className="relative top-0 question-mark " />
+              <QuestionMark3 className="relative top-10 question-mark " />
+            </div>
             <StarOneScreenTwo className="absolute bottom-0 right-0 " />
             <StarOneScreenTwo className="absolute top-24 left-32 " />
           </div>
@@ -335,7 +373,15 @@ export const Landing = () => {
               </p>
             </div>
             <div className="w-full flex max-[1100px]:justify-center ">
-              <Championship className="cloud-motion" />
+              {/* <Championship className="cloud-motion" /> */}
+              <Image
+                draggable={false}
+                src="/images/main/championship.png"
+                alt="logo"
+                width={584}
+                height={482}
+                className="relative z-10 cloud-motion"
+              />
             </div>
             <StarOneScreenOne className="absolute -top-32 left-32 " />
             <StarTwoScreenOne className="absolute -botom-32 left-32  " />
@@ -350,7 +396,15 @@ export const Landing = () => {
             </div>
             <div className="flex gap-x-[20px] pt-48 ">
               <div className="relative bottom-0 hover:bottom-10 transition-all duration-200 ">
-                <Silver className="absolute -top-20 left-[17px] cloud-motion " />
+                {/* <Silver className="absolute -top-20 left-[17px] cloud-motion " /> */}
+                <Image
+                  draggable={false}
+                  src="/images/medal/silver.png"
+                  alt="logo"
+                  width={180}
+                  height={180}
+                  className="absolute -top-20 left-[17px] cloud-motion"
+                />
                 <StarOneScreenOne className="absolute -top-40 " />
                 <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[4px] flex flex-col items-center justify-end p-8 ">
                   <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
@@ -363,7 +417,15 @@ export const Landing = () => {
                 </div>
               </div>
               <div className="relative mt-5 bottom-0 hover:bottom-10 transition-all duration-200  ">
-                <Gold className="absolute -top-40 -right-[42px] cloud-motion " />
+                {/* <Gold className="absolute cloud-motion " /> */}
+                <Image
+                  draggable={false}
+                  src="/images/medal/gold.png"
+                  alt="logo"
+                  width={296}
+                  height={296}
+                  className="absolute -top-40 cloud-motion"
+                />
                 <StarTwoScreenOne className="absolute -bottom-10 -right-10 " />
                 <div className="w-[212px] h-[296px] bg-[#903AFF20] border-[1px] border-[#903AFF] rounded-[4px] flex flex-col items-center justify-end p-8 ">
                   <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
@@ -376,7 +438,15 @@ export const Landing = () => {
                 </div>
               </div>
               <div className="relative bottom-0 hover:bottom-10 transition-all duration-200  ">
-                <Bronze className="absolute -top-20 left-[17px] cloud-motion " />
+                {/* <Bronze className="absolute -top-20 left-[17px] cloud-motion " /> */}
+                <Image
+                  draggable={false}
+                  src="/images/medal/bronze.png"
+                  alt="logo"
+                  width={180}
+                  height={180}
+                  className="absolute -top-20 left-[17px] cloud-motion"
+                />
                 <StarOneScreenOne className="absolute -top-20 right-0 " />
                 <div className="w-[212px] h-[296px] bg-[#D434FE20] border-[1px] border-[#D434FE] rounded-[4px] flex flex-col items-center justify-end p-8 ">
                   <p className="text-center first-line:text-[20px] first-line:leading-[8px] first-line:font-medium ">
@@ -412,22 +482,46 @@ export const Landing = () => {
             <div className="grid min-[1100px]:grid-cols-3 max-[1100px]:grid-cols-3 border-[1px] border-[#D434FE] rounded-[5px] px-14 max-[700px]:px-0 py-20 mt-10 relative ">
               <StarOneScreenOne className="absolute left-10 -top-10 " />
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <LibertyAssured className="w-[110px] " />
+                <Image
+                  draggable={false}
+                  src="/images/sponsors/liberty-assured.png"
+                  alt="logo"
+                  width={110}
+                  height={110}
+                />
                 <HorizLine className="-bottom-[2px] " />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <LibertyPay className="px-2 w-[190px] " />
+                <Image
+                  draggable={false}
+                  src="/images/sponsors/liberty-pay.png"
+                  alt="logo"
+                  width={190}
+                  height={190}
+                />
                 <StarTwoScreenOne className="absolute right-10 -top-4 " />
                 <HorizLine className="-bottom-[2px] " />
                 <VertLine className=" right-0" />
                 <VertLine className="left-0" />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <Winwise className="w-[120px] " />
+                <Image
+                  draggable={false}
+                  src="/images/sponsors/win-wise.png"
+                  alt="logo"
+                  width={120}
+                  height={120}
+                />
                 <HorizLine className="-bottom-[2px] " />
               </div>
               <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
-                <Whispersms className="w-[120px] " />
+                <Image
+                  draggable={false}
+                  src="/images/sponsors/whispersms.png"
+                  alt="logo"
+                  width={120}
+                  height={120}
+                />
                 {/* <VertLine className="" /> */}
                 {/* <HorizLine className="min-[1100px]:hidden max-[1100px]:-bottom-[2px] " /> */}
               </div>
@@ -457,12 +551,19 @@ export const Landing = () => {
       {/* screen eight- privacy policy  */}
       <div className="w-full overflow-hidden py-20 px-24 flex relative">
         <FlareFive className="absolute -bottom-72  -left-20 " />
-        {/* <PadlockMan className="absolute right-32 bottom-10 z-10 " /> */}
         <StarOneScreenOne className="absolute top-32 right-32 " />
         <StarTwoScreenOne className="absolute bottom-20 right-20 " />
         <div className="w-full flex flex-row-reverse max-[1100px]:flex-col-reverse justify-between ">
           <div className="relative">
-            <PadlockMan className="z-10 relative" />
+            {/* <PadlockMan  */}
+            <Image
+              draggable={false}
+              src="/images/main/padlock-man.png"
+              alt="logo"
+              width={559}
+              height={749}
+              className="z-10 relative"
+            />
             <Security className="absolute right-32 top-12 z-0 " />
           </div>
           <div className="flex text-[13px]">

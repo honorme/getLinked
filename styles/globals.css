@@ -66,6 +66,20 @@ a {
     }
 }
 
+.question-mark {
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float: left;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
 .circle {
   border-radius: 100%;
   background: linear-gradient(270deg, #903AFF 0%, #D434FE 100%);
@@ -100,3 +114,26 @@ a {
   transition: all ease-in-out 0.2s
 }
 /* for future use  */
+
+.stars{
+  position: absolute;
+  display: block;
+  animation: reset-password-animate 25s linear infinite;
+  bottom: -150px;
+}
+@keyframes reset-password-animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
