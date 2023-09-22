@@ -1,41 +1,23 @@
 import {
-  Bronze,
-  ChairGirl,
-  Championship,
-  CloudMan,
   CountdownSvg,
   CurledArrowScreenTwo,
   Ellipse,
   Facebook,
-  FlareFive,
-  FlareFour,
-  FlareOne,
-  FlareSix,
-  FlareTwo,
-  Gold,
   GreenCheck,
   Instagram,
-  LibertyAssured,
-  LibertyPay,
   Linkedin,
   Location,
-  PadlockMan,
   Phone,
   QuestionMark1,
   QuestionMark2,
   QuestionMark3,
   Security,
-  Silver,
-  StandingMan_Woman,
   StarOneScreenOne,
   StarOneScreenTwo,
   StarTwoScreenOne,
   SubTitleSvg,
-  TheBigIdea,
   TitleSvg,
   Twitter,
-  Whispersms,
-  Winwise,
 } from 'assets/svgs'
 import Image from 'next/image'
 import { Button } from './button'
@@ -70,16 +52,28 @@ export const Landing = () => {
     <div
       className={`tracking-wide ${montserrat.className} max-[500px]:absolute `}
     >
-      <div className="absolute left-0 -top-40 ">{/* <FlareOne /> */}</div>
-      <div className="absolute right-0 top-0 ">
-        <FlareTwo />
-      </div>
       {/* screen one - head  */}
-      <div className="w-[full] max-[1100px]:h-auto flex flex-col border-b-[1px] border-[#ffffff20] ">
+      <div className="w-[full] max-[1100px]:h-auto flex flex-col border-b-[1px] border-[#ffffff20] relative ">
+        <Image
+          draggable={false}
+          src="/images/flare/flare1.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 left-0"
+        />
+        <Image
+          draggable={false}
+          src="/images/flare/flare2.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 right-0"
+        />
         <StarOneScreenOne className="absolute top-48 left-32 " />
         <StarTwoScreenOne className="absolute top-56 right-[500px] " />
         <StarTwoScreenOne className="absolute bottom-32 left-[500px] " />
-        <div className="w-full h-[140px] border-b-[1px] border-[#ffffff20] px-24 flex items-end justify-between pb-[26px] ">
+        <div className="w-full h-[140px] border-b-[1px] border-[#ffffff20] px-24 flex items-end justify-between pb-[26px] z-10 ">
           <span className={`flex font-medium text-[36px] ${clash.className} `}>
             <p>get</p>
             <p className="text-[#D434FE] ">linked</p>
@@ -105,7 +99,7 @@ export const Landing = () => {
         <div className="w-full flex max-[1100px]:flex-col justify-between items-center mt-10 relative ">
           <div className="z-10 min-[800px]:ml-24 mt-20 flex flex-col max-[800px]:items-center ">
             <TitleSvg className="w-[600px] max-[1100px]:w-[800px] " />
-            <p className="w-96 max-[800px]:text-[24px] max-[800px]:w-auto max-[800px]:px-32 max-[800px]:text-center ">
+            <p className="w-96 max-[800px]:text-[26px] max-[800px]:w-auto max-[800px]:px-32 max-[800px]:text-center ">
               Participate in getlinked tech Hackathon 2023 stand a chance to win
               a Big prize
             </p>
@@ -163,7 +157,7 @@ export const Landing = () => {
               purple="tech Hackathon 1.0"
               star={<StarOneScreenTwo className="relative left-20 top-10 " />}
             />
-            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[24px] mt-5 ">
+            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[26px] mt-5 ">
               Our tech hackathon is a melting pot of visionaries, and its
               purpose is as clear as day: to shape the future. Whether
               you&#39;re a coding genius, a design maverick, or a concept
@@ -176,9 +170,23 @@ export const Landing = () => {
         </div>
       </div>
       {/* screen three - rules and guidelines  */}
-      <div className="w-full flex relative  border-b-[1px] border-[#ffffff20]">
-        {/* <FlareOne className="absolute left-0 -top-40 " /> */}
-        <FlareFour className="absolute right-0 top-0 " />
+      <div className="w-full flex relative border-b-[1px] border-[#ffffff20]">
+        <Image
+          draggable={false}
+          src="/images/flare/flare1.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 left-0 "
+        />
+        <Image
+          draggable={false}
+          src="/images/flare/flare3.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 right-0"
+        />
         <div className="w-full flex max-[1100px]:flex-col-reverse items-center justify-center gap-x-10 ">
           <div className="z-10 max-[1100px]:mb-20 ">
             <SubTitle
@@ -186,7 +194,7 @@ export const Landing = () => {
               purple="Guidelines"
               star={<StarTwoScreenOne className="relative left-20 top-10 " />}
             />
-            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[24px] mt-5 ">
+            <p className="w-[525px] max-[1100px]:w-[400px] max-[800px]:w-[530px] max-[1100px]:text-center max-[800px]:text-[26px] mt-5 ">
               Our tech hackathon is a melting pot of visionaries, and its
               purpose is as clear as day: to shape the future. Whether
               you&#39;re a coding genius, a design maverick, or a concept
@@ -197,14 +205,13 @@ export const Landing = () => {
             </p>
           </div>
           <div className="relative">
-            {/* <ChairGirl className="relative z-10 cloud-motion " /> */}
             <Image
               draggable={false}
               src="/images/main/chair-girl.png"
               alt="logo"
               width={664}
               height={664}
-              className="relative z-10 cloud-motion"
+              className="relative z-10"
             />
             <StarOneScreenTwo className="absolute bottom-44 left-0 " />
             <Ellipse className="absolute top-20 right-32 z-0 " />
@@ -213,8 +220,14 @@ export const Landing = () => {
       </div>
       {/* screen four - judging criteria  */}
       <div className="w-full py-20 pt-32 flex relative  border-b-[1px] border-[#ffffff20]">
-        {/* <FlareFive className="absolute -bottom-52 left-0 " /> */}
-        <FlareSix className="absolute right-0 top-52 " />
+        <Image
+          draggable={false}
+          src="/images/flare/flare4.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 bottom-0 left-0"
+        />
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-10 ">
           <div className="relative">
             {/* <StandingMan_Woman className="relative z-10 cloud-motion " /> */}
@@ -234,7 +247,7 @@ export const Landing = () => {
             <SubTitle white="Judging Criteria" purple="Key attributes" />
             {judgingCriteria?.map(({ label, text }, index) => (
               <span key={index} className="flex flex-col py-2 ">
-                <p className="w-[600px] max-[1100px]:w-[400px] max-[800px]:w-[530px] font-thin text-[14px] max-[800px]:text-[22px] max-[1100px]:text-center ">
+                <p className="w-[600px] max-[1100px]:w-[400px] max-[800px]:w-[530px] font-thin text-[14px] max-[800px]:text-[25px] max-[1100px]:text-center ">
                   <b className="text-[#FF26B9] font-semibold pr-2 ">{label}</b>
                   {text}
                 </p>
@@ -248,13 +261,21 @@ export const Landing = () => {
       </div>
       {/* screen five - faqs  */}
       <div className="w-full py-20 flex relative border-b-[1px] border-[#ffffff20]">
+        <Image
+          draggable={false}
+          src="/images/flare/flare5.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 right-0"
+        />
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-10 ">
           <div className="z-10 max-[800px]:flex flex-col items-center ">
             <div className="relative">
               <SubTitle white="Frequently Ask" purple="Question" />
               <StarOneScreenTwo className="absolute -top-10 -left-10 " />
             </div>
-            <p className="w-[400px] max-[800px]:w-[570px] max-[800px]:mt-4 font-extralight text-[14px] max-[800px]:text-[22px] max-[800px]:text-center ">
+            <p className="w-[400px] max-[800px]:w-[570px] max-[800px]:mt-4 font-extralight text-[14px] max-[800px]:text-[25px] max-[800px]:text-center ">
               We got answers to the questions that you might want to ask about{' '}
               <b className="font-medium">getlinked Hackathon 1.0</b>
             </p>
@@ -265,7 +286,7 @@ export const Landing = () => {
                     onMouseOver={() => setIdx(index)}
                     onMouseOut={() => setIdx(undefined)}
                     key={index}
-                    className="flex border-b-[1px] border-[#D434FE] h-[40px] max-[800px]:h-[80px] hover:pb-2 transition-all duration-200 font-extralight text-[13px] max-[800px]:text-[24px] "
+                    className="flex border-b-[1px] border-[#D434FE] h-[40px] max-[800px]:h-[80px] hover:pb-2 transition-all duration-200 font-extralight text-[13px] max-[800px]:text-[26px] "
                   >
                     <div className="flex w-full gap-2 items-center justify-between max-[800px]:py-4 ">
                       <p>{text}</p>
@@ -310,7 +331,7 @@ export const Landing = () => {
             >
               Timeline
             </p>
-            <p className="w-[380px] max-[800px]:w-[525px] text-center max-[800px]:text-[22px] ">
+            <p className="w-[380px] max-[800px]:w-[525px] text-center max-[800px]:text-[25px] ">
               Here is the breakdown of the time we anticipate using for the
               upcoming event.
             </p>
@@ -324,7 +345,7 @@ export const Landing = () => {
                       <p className="text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                         {eventTitle}
                       </p>
-                      <p className="text-[12px] max-[800px]:text-[24px] font-thin text-end max-[1100px]:text-start w-[400px] max-[800px]:w-[590px] ">
+                      <p className="text-[12px] max-[800px]:text-[26px] font-thin text-end max-[1100px]:text-start w-[400px] max-[800px]:w-[590px] ">
                         {subtitle}
                       </p>
                     </div>
@@ -349,7 +370,7 @@ export const Landing = () => {
                       <p className="text-[18px] max-[800px]:text-[28px] text-[#D434FE] font-bold ">
                         {eventTitle}
                       </p>
-                      <p className="text-[12px] max-[800px]:text-[24px] font-thin text-start w-[400px] max-[800px]:w-[590px] ">
+                      <p className="text-[12px] max-[800px]:text-[26px] font-thin text-start w-[400px] max-[800px]:w-[590px] ">
                         {subtitle}
                       </p>
                     </div>
@@ -365,13 +386,19 @@ export const Landing = () => {
       </div>
       {/* screen six - prizes  */}
       <div className="w-full overflow-y- py-20 flex relative">
-        {/* <FlareFive className="absolute -top-40 left-0 " /> */}
-        <FlareFour className="absolute right-0 top-0 " />
+        <Image
+          draggable={false}
+          src="/images/flare/flare2.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-20 left-10 rotate-90 rounded-full "
+        />
         <div className="w-full flex max-[1100px]:flex-col justify-evenly max-[1100px]:justify-center px-24 z-10 ">
           <div className="relative mt-32 ">
             <div className="min-[1100px]:pl-36 min-[1100px]:hidden py-2 max-[1100px]:flex max-[1100px]:flex-col max-[1100px]:items-center ">
               <SubTitle white="Prizes and" purple="Rewards" />
-              <p className="w-[330px] max-[800px]:w-[580px] text-[13px] max-[800px]:text-[24px] max-[1100px]:text-center max-[1100px]:mt-3 ">
+              <p className="w-[330px] max-[800px]:w-[580px] text-[13px] max-[800px]:text-[26px] max-[1100px]:text-center max-[1100px]:mt-3 ">
                 Highlight of the prizes or rewards for winners and for
                 participants.
               </p>
@@ -468,8 +495,22 @@ export const Landing = () => {
       </div>
       {/* screen seven- partners  */}
       <div className="w-full h-[1080px] py-20 flex relative border-b-[1px] border-[#ffffff20]">
-        {/* <FlareFive className="absolute -top-40 left-0 " /> */}
-        {/* <FlareSix className="absolute right-0 -bottom-40 " /> */}
+        <Image
+          draggable={false}
+          src="/images/flare/flare1.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 top-0 -left-20 -rotate-90"
+        />
+        <Image
+          draggable={false}
+          src="/images/flare/flare7.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 -bottom-80 right-0"
+        />
         <div className="w-full flex flex-col justify-center ">
           <div className="w-full h-[100px] flex flex-col items-center justify-center z-10 max-[800px]:mb-20 ">
             <p
@@ -477,7 +518,7 @@ export const Landing = () => {
             >
               Partners and Sponsors
             </p>
-            <p className="text-center text-[12px] max-[800px]:text-[24px] w-[420px] max-[800px]:w-[590px] font-thin ">
+            <p className="text-center text-[12px] max-[800px]:text-[26px] w-[420px] max-[800px]:w-[590px] font-thin ">
               Getlinked Hackathon 1.0 is honored to have the following major
               companies as its partners and sponsors
             </p>
@@ -554,7 +595,14 @@ export const Landing = () => {
       </div>
       {/* screen eight- privacy policy  */}
       <div className="w-full overflow-hidden py-20 px-24 flex relative">
-        <FlareFive className="absolute -bottom-72  -left-20 " />
+        <Image
+          draggable={false}
+          src="/images/flare/flare8.png"
+          alt="logo"
+          width={710}
+          height={587}
+          className="absolute z-0 bottom-0 left-0"
+        />
         <StarOneScreenOne className="absolute top-32 right-32 " />
         <StarTwoScreenOne className="absolute bottom-20 right-20 " />
         <div className="w-full flex flex-row-reverse max-[1100px]:flex-col-reverse justify-between ">
@@ -588,7 +636,7 @@ export const Landing = () => {
                   it’s our aim to always take of our participant
                 </p>
               </div>
-              <div className="flex flex-col items-center justify-center border-[1px] border-[#D434FE] rounded-[5px] p-14 mt-10 relative max-[800px]:text-[24px] ">
+              <div className="flex flex-col items-center justify-center border-[1px] border-[#D434FE] rounded-[5px] p-14 mt-10 relative max-[800px]:text-[26px] ">
                 <p className=" min-[1100px]:w-[400px] self-start max-[1100px]:text-center ">
                   At getlinked tech Hackathon 1.0, we value your privacy and are
                   committed to protecting your personal information. This
@@ -634,7 +682,7 @@ export const Landing = () => {
         </div>
       </div>
       {/* screen eight- footer  */}
-      <div className="w-full pt-20 pb-5 px-24 flex flex-col justify-between max-[800px]:items-center relative">
+      <div className="w-full pt-20 pb-5 px-24 flex flex-col justify-between max-[800px]:items-center relative bg-[#0f0a1e] ">
         <StarOneScreenOne className="absolute top-10 left-28 " />
         <StarTwoScreenOne className="absolute bottom-10 right-20 " />
         <div className="w-full flex max-[1100px]:flex-wrap max-[800px]:flex-col items-center justify-between text-[13px]">
@@ -645,19 +693,19 @@ export const Landing = () => {
               <p>get</p>
               <p className="text-[#D434FE] ">linked</p>
             </span>
-            <p className="text-[12px] max-[800px]:text-[24px] w-[400px] max-[800px]:w-[580px] ">
+            <p className="text-[12px] max-[800px]:text-[26px] w-[400px] max-[800px]:w-[580px] ">
               Getlinked Tech Hackathon is a technology innovation program
               established by a group of organizations with the aim of showcasing
               young and talented individuals in the field of technology
             </p>
-            <div className="flex items-center gap-x-2 mt-20 max-[800px]:mt-10 max-[800px]:text-[24px] ">
+            <div className="flex items-center gap-x-2 mt-20 max-[800px]:mt-10 max-[800px]:text-[26px] ">
               <p>Terms of Use</p>
               <div className="w-[2px] h-5 bg-[#D434FE] "></div>
               <p>Privacy Policy</p>
             </div>
           </div>
           <div className="w-full px-12">
-            <div className="flex flex-col gap-y-3 px-10 max-[800px]:px-0 max-[800px]:mt-10 max-[800px]:text-[24px] ">
+            <div className="flex flex-col gap-y-3 px-10 max-[800px]:px-0 max-[800px]:mt-10 max-[800px]:text-[26px] ">
               <p className="text-[#D434FE] font-semibold ">Useful Links</p>
               <p>Overview</p>
               <p>Timeline</p>
@@ -673,7 +721,7 @@ export const Landing = () => {
             </div>
           </div>
           <div className="w-full px-12">
-            <div className="flex flex-col gap-y-3 relative max-[800px]:mt-10 max-[800px]:text-[24px] ">
+            <div className="flex flex-col gap-y-3 relative max-[800px]:mt-10 max-[800px]:text-[26px] ">
               <StarTwoScreenOne className="absolute -left-20 top-2" />
               <p className="text-[#D434FE] font-semibold ">Contact Us</p>
               <div className="flex gap-x-3">
@@ -690,7 +738,7 @@ export const Landing = () => {
             </div>
           </div>
         </div>
-        <p className="w-full text-center text-[12px] max-[800px]:text-[24px] max-[800px]:py-14 ">
+        <p className="w-full text-center text-[12px] max-[800px]:text-[26px] max-[800px]:py-14 ">
           All rights reserved. © getlinked Ltd.
         </p>
       </div>

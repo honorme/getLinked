@@ -18,15 +18,7 @@ export { default as MobileMenu } from './mobile-menu.svg'
 export { default as GreenCheck } from './green-check.svg'
 
 // main
-export { default as TheBigIdea } from './the-big-idea.svg'
-export { default as ChairGirl } from './chair-girl.svg'
-export { default as StandingMan_Woman } from './standing-man-woman.svg'
-export { default as CloudMan } from './cloud-man.svg'
-export { default as Championship } from './championship.svg'
-export { default as PadlockMan } from './padlock-man.svg'
 export { default as Security } from './security.svg'
-export { default as ThumbsUpMan } from './thumbs-up-man.svg'
-export { default as CongratulationsMan } from './congratulations-man.svg'
 
 //medals
 export { default as Silver } from './medals/silver.svg'
