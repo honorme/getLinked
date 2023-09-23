@@ -15,7 +15,10 @@ export { default as QuestionMark1 } from './question-mark/question-mark1.svg'
 export { default as QuestionMark2 } from './question-mark/question-mark2.svg'
 export { default as QuestionMark3 } from './question-mark/question-mark3.svg'
 export { default as MobileMenu } from './mobile-menu.svg'
+export { default as CloseMenu } from './closeMenu.svg'
+export { default as BackButton } from './back.svg'
 export { default as GreenCheck } from './green-check.svg'
+export { default as Walking } from './walking.svg'
 
 // main
 export { default as Security } from './security.svg'

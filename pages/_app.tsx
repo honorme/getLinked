@@ -1,6 +1,20 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import localFont from 'next/font/local'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient()
+  return (
+    <main className={clash.className}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </main>
+  )
+}
+
+export default MyApp
 
 export const typohoop = localFont({
   src: [
@@ -87,13 +101,3 @@ export const clash = localFont({
     },
   ],
 })
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <main className={clash.className}>
-      <Component {...pageProps} />
-    </main>
-  )
-}
-
-export default MyApp

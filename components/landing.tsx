@@ -1,4 +1,5 @@
 import {
+  CloseMenu,
   CountdownSvg,
   CurledArrowScreenTwo,
   Ellipse,
@@ -7,6 +8,7 @@ import {
   Instagram,
   Linkedin,
   Location,
+  MobileMenu,
   Phone,
   QuestionMark1,
   QuestionMark2,
@@ -16,19 +18,23 @@ import {
   StarOneScreenTwo,
   StarTwoScreenOne,
   SubTitleSvg,
-  TitleSvg,
   Twitter,
 } from 'assets/svgs'
 import Image from 'next/image'
 import { Button } from './button'
 import { useEffect, useState } from 'react'
 import { clash, montserrat, typohoop, voces, volkhov } from 'pages/_app'
+import { useRouter } from 'next/router'
+import classNames from 'classnames'
 
 export const Landing = () => {
+  const router = useRouter()
   const nav = ['Timeline', 'Overview', 'FAQs', 'Contact']
   const [idx, setIdx] = useState<number>()
   const [width, setWidth] = useState(500)
   const [height, setHeight] = useState(500)
+  const [mobileNavOpened, setMobileNavOpened] = useState(false)
+  const [activeNav, setActiveNav] = useState('Overview')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,13 +53,37 @@ export const Landing = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+  const handleScroll = (index: number) => {
+    setActiveNav(nav[index])
+    setMobileNavOpened(false)
+    const timelineSection = index === 0 && document.getElementById('timeline')
+    const overviewSection = index === 1 && document.getElementById('overview')
+    const faqsection = index === 2 && document.getElementById('faqs')
+    if (timelineSection) {
+      timelineSection.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (faqsection) {
+      faqsection.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (overviewSection) {
+      overviewSection.scrollIntoView({ behavior: 'smooth' })
+    }
+    index === 3 && router.push('/contact')
+  }
+
+  const handleMenu = () => {
+    setMobileNavOpened(!mobileNavOpened)
+  }
 
   return (
     <div
       className={`tracking-wide ${montserrat.className} max-[500px]:absolute `}
     >
       {/* screen one - head  */}
-      <div className="w-[full] max-[1100px]:h-auto flex flex-col border-b-[1px] border-[#ffffff20] relative ">
+      <div
+        id="overview"
+        className="w-[full] max-[1100px]:h-auto flex flex-col border-b-[1px] border-[#ffffff20] relative "
+      >
         <Image
           draggable={false}
           src="/images/flare/flare1.png"
@@ -68,47 +98,130 @@ export const Landing = () => {
           alt="logo"
           width={710}
           height={587}
-          className="absolute z-0 top-0 right-0"
+          className="absolute z-0 top-0 right-0 max-[800px]:hidden"
         />
         <StarOneScreenOne className="absolute top-48 left-32 " />
         <StarTwoScreenOne className="absolute top-56 right-[500px] " />
         <StarTwoScreenOne className="absolute bottom-32 left-[500px] " />
-        <div className="w-full h-[140px] border-b-[1px] border-[#ffffff20] px-24 flex items-end justify-between pb-[26px] z-10 ">
+        <div className="w-full h-[140px] z-50 fixed border-b-[1px] border-[#ffffff20] px-24 flex items-end justify-between pb-[26px] backdrop-blur-[10px] ">
           <span className={`flex font-medium text-[36px] ${clash.className} `}>
             <p>get</p>
             <p className="text-[#D434FE] ">linked</p>
           </span>
-          {/* <div className="flex items-center gap-32 z-10">
-            <div className="flex items-center gap-2 max-[1100px]:">
+          <div className="flex items-center gap-32 z-10 max-[800px]:hidden ">
+            <div className="flex items-center gap-2 ">
               {nav?.map((item, index) => (
                 <p
-                  className="text-[14px] hover:text-[#D434FE] hover:tracking-[.8px] transition-all cursor-pointer w-28 flex justify-center "
+                  onClick={() => handleScroll(index)}
+                  className={classNames(
+                    `text-[14px] hover:text-[#D434FE] hover:tracking-[.8px] transition-all cursor-pointer w-28 flex justify-center`,
+                    activeNav === item && 'text-[#D434FE]'
+                  )}
                   key={index}
                 >
                   {item}
                 </p>
               ))}
             </div>
-            <Button style={{ height: 53 }}>Register</Button>
-          </div> */}
+            <Button
+              onClick={() => router.push('/register')}
+              className="max-[700px]:hidden "
+              style={{ height: 53 }}
+            >
+              Register
+            </Button>
+          </div>
+          <div onClick={handleMenu} className="min-[800px]:hidden  ">
+            {!mobileNavOpened ? (
+              <MobileMenu className="w-[40px] h-[40px] " />
+            ) : (
+              <CloseMenu className="w-[40px] h-[40px]  " />
+            )}
+          </div>
+        </div>
+        <div
+          className={
+            !!mobileNavOpened
+              ? `fixed top-[140px] w-full h-[700px] z-40 px-20 transition-all duration-300 `
+              : `fixed -top-[700px] w-full h-[700px] z-40 px-20 transition-all duration-300 `
+          }
+        >
+          <div className="w-full h-full bg-[#140D27] rounded-[30px] px-20 py-32 ">
+            {nav?.map((navs, index) => (
+              <div key={index}>
+                <p
+                  onClick={() => handleScroll(index)}
+                  className="text-[32px] py-4 hover:text-[#D434FE] hover:tracking-[.8px] transition-all cursor-pointer "
+                >
+                  {navs}
+                </p>
+              </div>
+            ))}
+            <div className="w-full flex items-center justify-center hover:px-2 transition-all duration-200 mt-10 ">
+              <button
+                onClick={() => router.push('/register')}
+                className="primary-button w-full "
+                style={{ height: 90, fontSize: 35, borderRadius: 15 }}
+              >
+                Register
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="flex w-full relative max-[1100px]:justify-center ">
+        <div className="flex w-full relative max-[1100px]:justify-center mt-[140px] ">
           <SubTitleSvg className="w-[723px] max-[1100px]:w-[500px] max-[1100px]:right-[20%] absolute right-20 top-10 " />
         </div>
         <div className="w-full flex max-[1100px]:flex-col justify-between items-center mt-10 relative ">
           <div className="z-10 min-[800px]:ml-24 mt-20 flex flex-col max-[800px]:items-center ">
-            <TitleSvg className="w-[600px] max-[1100px]:w-[800px] " />
+            {/* <TitleSvg className="w-[600px] max-[1100px]:w-[800px] " /> */}
+            <div
+              className={`text-[65px] min-[800px]:text-[55px] min-[800px]:w-[480px] font-bold pb-10 max-[800px]:pt-5 relative ${clash.className}`}
+            >
+              <Image
+                draggable={false}
+                src="/images/title/small-bulb.png"
+                alt="logo"
+                width={40}
+                height={40}
+                className="absolute -top-12 max-[800px]:-top-6 right-20  "
+              />
+              <Image
+                draggable={false}
+                src="/images/title/chain.png"
+                alt="logo"
+                width={40}
+                height={40}
+                className="absolute bottom-5 right-10 max-[800px]:-right-4  "
+              />
+              <Image
+                draggable={false}
+                src="/images/title/boom.png"
+                alt="logo"
+                width={40}
+                height={40}
+                className="absolute bottom-5 right-0 max-[800px]:-right-14  "
+              />
+              <p className="">getlinked Tech</p>
+              <p className="leading-3">
+                Hackathon <b className="text-[#D434FE] ">1.0</b>
+              </p>
+            </div>
             <p className="w-96 max-[800px]:text-[26px] max-[800px]:w-auto max-[800px]:px-32 max-[800px]:text-center ">
               Participate in getlinked tech Hackathon 2023 stand a chance to win
               a Big prize
             </p>
             <div className="w-full flex max-[800px]:justify-center ">
-              <Button style={{ height: 53, marginTop: 40 }}>Register</Button>
+              <Button
+                onClick={() => router.push('/register')}
+                style={{ height: 53, marginTop: 40 }}
+              >
+                Register
+              </Button>
             </div>
             <CountdownSvg className="mt-8 " />
           </div>
-          <div className="w-full flex min-[1100px]:justify-end max-[1100px]:justify-center h-[600px] overflow-hidden relative max-[1100px]:self-end ">
+          <div className="w-full flex min-[1100px]:justify-end max-[1100px]:justify-center h-[600px] min-[800px]:h-[700px] overflow-hidden relative max-[1100px]:self-end ">
             <Image
               draggable={false}
               src="/images/image-one.png"
@@ -122,9 +235,9 @@ export const Landing = () => {
               draggable={false}
               src="/images/man-wearing-smart-glasses-touching-virtual-screen.png"
               alt="logo"
-              width={600}
-              height={600}
-              className="absolute -bottom-5 z-10 grayscale-[50%] cloud-motion "
+              width={700}
+              height={700}
+              className="absolute  -bottom-5 z-10 grayscale-[50%] cloud-motion "
             />
             <Image
               draggable={false}
@@ -211,7 +324,7 @@ export const Landing = () => {
               alt="logo"
               width={664}
               height={664}
-              className="relative z-10"
+              className="relative z-10 cloud-motion"
             />
             <StarOneScreenTwo className="absolute bottom-44 left-0 " />
             <Ellipse className="absolute top-20 right-32 z-0 " />
@@ -260,7 +373,10 @@ export const Landing = () => {
         </div>
       </div>
       {/* screen five - faqs  */}
-      <div className="w-full py-20 flex relative border-b-[1px] border-[#ffffff20]">
+      <div
+        id="faqs"
+        className="w-full py-20 flex relative border-b-[1px] border-[#ffffff20]"
+      >
         <Image
           draggable={false}
           src="/images/flare/flare5.png"
@@ -320,7 +436,7 @@ export const Landing = () => {
         </div>
       </div>
       {/* screen five - timeline  */}
-      <div className="w-full py-20 flex relative overflow-hidden">
+      <div id="timeline" className="w-full py-20 flex relative overflow-hidden">
         <StarOneScreenOne className="absolute top-48 left-32 " />
         <StarOneScreenOne className="absolute top-[50%] right-32 " />
         <StarTwoScreenOne className="absolute bottom-20 left-52 " />
@@ -653,7 +769,7 @@ export const Landing = () => {
                     Here are terms of our Standard License:
                   </p>
                   <div className="flex font-thin  min-[1100px]:w-[400px] ">
-                    <div>
+                    <div className=" max-[800px]:mt-3">
                       <GreenCheck />
                     </div>
                     <p className="ml-4">
@@ -662,7 +778,7 @@ export const Landing = () => {
                     </p>
                   </div>
                   <div className="flex font-thin  min-[1100px]:w-[400px] ">
-                    <div>
+                    <div className=" max-[800px]:mt-3">
                       <GreenCheck />
                     </div>
                     <p className="ml-4">
@@ -713,10 +829,10 @@ export const Landing = () => {
               <p>Register</p>
               <div className="flex items-center gap-x-4">
                 <p className="text-[#D434FE] font-semibold ">Follow us</p>
-                <Instagram />
-                <Twitter />
-                <Facebook />
-                <Linkedin />
+                <Instagram className="cursor-pointer" />
+                <Twitter className="cursor-pointer" />
+                <Facebook className="cursor-pointer" />
+                <Linkedin className="cursor-pointer" />
               </div>
             </div>
           </div>
@@ -738,7 +854,7 @@ export const Landing = () => {
             </div>
           </div>
         </div>
-        <p className="w-full text-center text-[12px] max-[800px]:text-[26px] max-[800px]:py-14 ">
+        <p className="w-full text-center text-[12px] max-[800px]:text-[26px] max-[800px]:py-14 pt-20 ">
           All rights reserved. © getlinked Ltd.
         </p>
       </div>
