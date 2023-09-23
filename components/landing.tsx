@@ -108,7 +108,7 @@ export const Landing = () => {
             <p>get</p>
             <p className="text-[#D434FE] ">linked</p>
           </span>
-          <div className="flex items-center gap-32 z-10 max-[800px]:hidden ">
+          <div className="flex items-center gap-32 z-10 max-[1100px]:hidden ">
             <div className="flex items-center gap-2 ">
               {nav?.map((item, index) => (
                 <p
@@ -125,13 +125,13 @@ export const Landing = () => {
             </div>
             <Button
               onClick={() => router.push('/register')}
-              className="max-[700px]:hidden "
+              className="max-[1100px]:hidden "
               style={{ height: 53 }}
             >
               Register
             </Button>
           </div>
-          <div onClick={handleMenu} className="min-[800px]:hidden  ">
+          <div onClick={handleMenu} className="min-[1100px]:hidden  ">
             {!mobileNavOpened ? (
               <MobileMenu className="w-[40px] h-[40px] " />
             ) : (
@@ -174,7 +174,6 @@ export const Landing = () => {
         </div>
         <div className="w-full flex max-[1100px]:flex-col justify-between items-center mt-10 relative ">
           <div className="z-10 min-[800px]:ml-24 mt-20 flex flex-col max-[800px]:items-center ">
-            {/* <TitleSvg className="w-[600px] max-[1100px]:w-[800px] " /> */}
             <div
               className={`text-[65px] min-[800px]:text-[55px] min-[800px]:w-[480px] font-bold pb-10 max-[800px]:pt-5 relative ${clash.className}`}
             >
@@ -212,12 +211,21 @@ export const Landing = () => {
               a Big prize
             </p>
             <div className="w-full flex max-[800px]:justify-center ">
-              <Button
-                onClick={() => router.push('/register')}
-                style={{ height: 53, marginTop: 40 }}
+              <div
+                className={classNames(
+                  'w-full flex items-center  max-[800px]:justify-center transition-all duration-200 hover:px-2'
+                )}
               >
-                Register
-              </Button>
+                <button
+                  onClick={() => router.push('/register')}
+                  style={{ marginTop: 40 }}
+                  className={classNames(
+                    'primary-button w-[200px] max-[800px]:w-[350px] h-[47px] max-[800px]:h-[60px] max-[800px]:text-[21px] '
+                  )}
+                >
+                  Register Now
+                </button>
+              </div>
             </div>
             <CountdownSvg className="mt-8 " />
           </div>
@@ -229,7 +237,7 @@ export const Landing = () => {
               width={width}
               height={height}
               style={{ transition: 'width 0.5s, height 0.5s' }}
-              className="absolute bottom-16 max-[1100px]:left-0 ml-14 z-30 globe "
+              className="absolute bottom-16 min-[1000px]:right-32  max-[1100px]:left-0 ml-14 z-30 globe "
             />
             <Image
               draggable={false}
@@ -343,7 +351,6 @@ export const Landing = () => {
         />
         <div className="w-full flex max-[1100px]:flex-col items-center justify-center gap-x-10 ">
           <div className="relative">
-            {/* <StandingMan_Woman className="relative z-10 cloud-motion " /> */}
             <Image
               draggable={false}
               src="/images/main/standing-man-woman.png"
@@ -367,7 +374,20 @@ export const Landing = () => {
               </span>
             ))}
             <div className="w-full flex  max-[1100px]:justify-center ">
-              <Button style={{ height: 53, marginTop: 30 }}>Read More</Button>
+              <div
+                className={classNames(
+                  'w-full flex items-center  max-[800px]:justify-center transition-all duration-200 hover:px-2'
+                )}
+              >
+                <button
+                  style={{ marginTop: 40 }}
+                  className={classNames(
+                    'primary-button w-[200px] max-[800px]:w-[390px] h-[47px] max-[800px]:h-[60px] max-[800px]:text-[21px] '
+                  )}
+                >
+                  Read More
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -642,7 +662,7 @@ export const Landing = () => {
           <div className="px-10 flex justify-center">
             <div className="grid min-[1100px]:grid-cols-3 max-[1100px]:grid-cols-3 border-[1px] border-[#D434FE] rounded-[5px] px-14 max-[700px]:px-0 py-20 mt-10 relative ">
               <StarOneScreenOne className="absolute left-10 -top-10 " />
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <Image
                   draggable={false}
                   src="/images/sponsors/liberty-assured.png"
@@ -652,7 +672,7 @@ export const Landing = () => {
                 />
                 <HorizLine className="-bottom-[2px] " />
               </div>
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <Image
                   draggable={false}
                   src="/images/sponsors/liberty-pay.png"
@@ -665,7 +685,7 @@ export const Landing = () => {
                 <VertLine className=" right-0" />
                 <VertLine className="left-0" />
               </div>
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <Image
                   draggable={false}
                   src="/images/sponsors/win-wise.png"
@@ -675,7 +695,7 @@ export const Landing = () => {
                 />
                 <HorizLine className="-bottom-[2px] " />
               </div>
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <Image
                   draggable={false}
                   src="/images/sponsors/whispersms.png"
@@ -686,7 +706,7 @@ export const Landing = () => {
                 {/* <VertLine className="" /> */}
                 {/* <HorizLine className="min-[1100px]:hidden max-[1100px]:-bottom-[2px] " /> */}
               </div>
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <div className={`${typohoop.className} text-[35px] flex `}>
                   <p>Pay</p>
                   <p className="text-[#00A3FF] ">box</p>
@@ -695,7 +715,7 @@ export const Landing = () => {
                 <VertLine className=" left-0" />
                 <VertLine className=" right-0" />
               </div>
-              <div className="rounded-xl sponsor w-[300px] max-[800px]:w-[230px] h-[150px] flex items-center justify-center relative ">
+              <div className="rounded-xl sponsor w-[300px] max-[1200px]:w-[230px] h-[150px] flex items-center justify-center relative ">
                 <div className={`${voces.className} text-[35px] flex gap-1 `}>
                   <p>Vuzual</p>
                   <div>
@@ -788,9 +808,20 @@ export const Landing = () => {
                   </div>
                 </div>
                 <div className=" max-[800px]:pb-20 max-[800px]:pt-10 ">
-                  <Button style={{ height: 53, marginTop: 20 }}>
-                    Read More
-                  </Button>
+                  <div
+                    className={classNames(
+                      'w-full flex items-center  max-[800px]:justify-center transition-all duration-200 hover:px-2'
+                    )}
+                  >
+                    <button
+                      style={{ marginTop: 40 }}
+                      className={classNames(
+                        'primary-button w-[200px] max-[800px]:w-[390px] h-[47px] max-[800px]:h-[60px] max-[800px]:text-[21px] '
+                      )}
+                    >
+                      Read More
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -854,7 +885,7 @@ export const Landing = () => {
             </div>
           </div>
         </div>
-        <p className="w-full text-center text-[12px] max-[800px]:text-[26px] max-[800px]:py-14 pt-20 ">
+        <p className="w-full text-center text-[12px] max-[800px]:text-[22px] max-[800px]:pt-20 pt-20 ">
           All rights reserved. © getlinked Ltd.
         </p>
       </div>

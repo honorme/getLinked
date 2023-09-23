@@ -98,10 +98,10 @@ export const RegisterUser = () => {
           onClick={() => router.back()}
           className="min-[700px]:hidden cursor-pointer "
         />
-        <span className={`flex font-medium text-[36px] ${clash.className} `}>
+        <div className={`flex font-medium text-[36px] ${clash.className} `}>
           <p>get</p>
           <p className="text-[#D434FE] ">linked</p>
-        </span>
+        </div>
         <div className="flex items-center gap-32 z-10 max-[1100px]:hidden ">
           <div className="flex items-center gap-2 ">
             {nav?.map((item, index) => (
@@ -290,14 +290,14 @@ export const RegisterUser = () => {
                 onClick={handleRegister}
                 style={{ height: 47, marginTop: 40 }}
                 className={classNames(
-                  checked && !loading
+                  checked && !loading && !register.isLoading
                     ? 'primary-button w-full '
                     : 'bg-[#aeaaaa] rounded-[5px] w-full cursor-not-allowed '
                 )}
               >
                 Register Now
               </button>
-              {!!loading && (
+              {(!!loading || register.isLoading) && (
                 <span className="loader relative top-5 left-2"></span>
               )}
             </div>
@@ -342,6 +342,38 @@ export const RegisterUser = () => {
                   }}
                 >
                   Back
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        {register.isError && (
+          <div className="w-full h-full max-[900px]:px-5 max-[700px]: fixed top-0 left-0 flex justify-center items-center bg-[#000000b0] backdrop-blur-[5px] ">
+            <div className="border-[1px] border-[#D434FE] max-[700px]:border-none rounded-[10px] p-10 px-20 ">
+              <div className="flex justify-center ">
+                <Image
+                  draggable={false}
+                  src="/images/main/error.png"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                  className=""
+                />
+              </div>
+              <p className="text-[30px] max-[800px]:text-[15px] text-center mt-4 ">
+                Sorry, an error occured
+              </p>
+              <div className="w-full flex items-center justify-center hover:px-2 transition-all duration-200 mt-10 ">
+                <button
+                  onClick={() => router.reload()}
+                  className="primary-button w-full "
+                  style={{
+                    height: 53,
+                    width: '90%',
+                    backgroundColor: 'transparent',
+                  }}
+                >
+                  Try again
                 </button>
               </div>
             </div>

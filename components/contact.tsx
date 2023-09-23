@@ -237,6 +237,78 @@ export const ContactUs = () => {
           </div>
         </div>
       </div>
+      {contact.isSuccess && (
+        <div className="w-full h-full max-[900px]:px-5 max-[700px]: fixed top-0 left-0 flex justify-center items-center bg-[#000000b0] backdrop-blur-[5px] ">
+          <div className="border-[1px] border-[#D434FE] max-[700px]:border-none rounded-[10px] p-10 px-20 ">
+            <div className="flex max-[700px]:flex-col max-[700px]:items-center  ">
+              <Image
+                draggable={false}
+                src="/images/main/big-check.png"
+                alt="logo"
+                width={300}
+                height={400}
+                className="relative left-20 max-[700px]:left-0"
+              />
+              <Image
+                draggable={false}
+                src="/images/main/congrats-man.png"
+                alt="logo"
+                width={300}
+                height={400}
+                className="relative right-20 max-[700px]:right-0"
+              />
+            </div>
+            <p className="text-[30px] text-center ">
+              Congratulations <br /> you have added Contact!
+            </p>
+            <div className="w-full flex items-center justify-center hover:px-2 transition-all duration-200 mt-10 ">
+              <button
+                onClick={() => router.push('/')}
+                className="primary-button w-full "
+                style={{
+                  height: 53,
+                  width: '90%',
+                  backgroundColor: 'transparent',
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {contact.isError && (
+        <div className="w-full h-full max-[900px]:px-5 max-[700px]: fixed top-0 left-0 flex justify-center items-center bg-[#000000b0] backdrop-blur-[5px] ">
+          <div className="border-[1px] border-[#D434FE] max-[700px]:border-none rounded-[10px] p-10 px-20 ">
+            <div className="flex justify-center ">
+              <Image
+                draggable={false}
+                src="/images/main/error.png"
+                alt="logo"
+                width={150}
+                height={150}
+                className=""
+              />
+            </div>
+            <p className="text-[30px] max-[800px]:text-[15px] text-center mt-4 ">
+              Sorry, an error occured
+            </p>
+            <div className="w-full flex items-center justify-center hover:px-2 transition-all duration-200 mt-10 ">
+              <button
+                onClick={() => router.reload()}
+                className="primary-button w-full "
+                style={{
+                  height: 53,
+                  width: '90%',
+                  backgroundColor: 'transparent',
+                }}
+              >
+                Try again
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
